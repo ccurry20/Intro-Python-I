@@ -28,5 +28,29 @@ it should use today’s date to get the month and year.
 """
 
 import sys
+import sys
 import calendar
 from datetime import datetime
+
+today = datetime.today()
+month = today.month
+year = today.year
+
+
+def change_month(new_month):
+    global month
+    month = new_month
+
+
+def change_year(new_year):
+    global year
+    year = new_year
+
+
+if(len(sys.argv) == 2):
+    change_month(int(sys.argv[1]))
+elif(len(sys.argv) == 3):
+    change_month(int(sys.argv[1]))
+    change_year(int(sys.argv[2]))
+
+print(calendar.month(year, month))
